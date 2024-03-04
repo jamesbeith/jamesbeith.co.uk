@@ -1,0 +1,18 @@
+baseURL: https://www.jamesbeith.co.uk/
+languageCode: en-gb
+title: James Beith
+theme: ["PaperMod"]
+params:
+  author: James Beith
+  description: Technical writing about Python & Django.
+  homeInfoParams:
+    Title: Technical writing about Python & Django
+    Content: 🐙 Staff Software Engineer at [Kraken Technologies](https://kraken.tech/) 🎸 Co-founder of [Glued to Music](https://www.gluedtomusic.com/)
+  editPost:
+    URL: "https://github.com/jamesbeith/jamesbeith.co.uk/blob/main/content"
+    Text: "Suggest Changes"
+    appendFilePath: true
+  ShowCodeCopyButtons: true
+outputFormats:
+  RSS:
+    baseName: "feed"
