@@ -23,6 +23,9 @@ menu:
       name: TIL
       url: /til/
       weight: 2
+disableKinds:
+  - taxonomy
+  - term
 outputFormats:
   RSS:
     baseName: "feed"
