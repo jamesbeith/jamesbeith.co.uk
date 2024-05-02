@@ -13,6 +13,16 @@ params:
     Text: "Suggest Changes"
     appendFilePath: true
   ShowCodeCopyButtons: true
+menu:
+  main:
+    - identifier: blog
+      name: Blog
+      url: /blog/
+      weight: 1
+    - identifier: til
+      name: TIL
+      url: /til/
+      weight: 2
 outputFormats:
   RSS:
     baseName: "feed"
