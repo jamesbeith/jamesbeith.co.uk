@@ -1,6 +1,8 @@
 ---
-title: 'Create a Django model index with an upper case empty string condition'
+title: 'How to create a Django model index with an upper case empty string condition'
 date: '2024-05-02T15:50:00+10:00'
+aliases:
+  - /til/2024-05-02/django-model-index-upper-case-empty-string-condition/
 ---
 
 Let’s say I have the following Django model.
