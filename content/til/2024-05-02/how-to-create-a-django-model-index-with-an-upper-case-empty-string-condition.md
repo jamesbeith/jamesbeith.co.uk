@@ -1,6 +1,6 @@
 ---
-title: 'How to create a Django model index with an upper case empty string condition'
-date: '2024-05-02T15:50:00+10:00'
+title: "How to create a Django model index with an upper case empty string condition"
+date: "2024-05-02T15:50:00+10:00"
 aliases:
   - /til/2024-05-02/django-model-index-upper-case-empty-string-condition/
 ---
@@ -77,4 +77,4 @@ Running migrations:
 django.core.exceptions.FieldError: Cannot resolve keyword '' into field. Choices are: id, question_text
 ```
 
-It appears in this incorrect case `Upper("")` is referring to applying the function `Upper()` to the nonexistent model field named `""`. 
+It appears in this incorrect case `Upper("")` is referring to applying the function `Upper()` to the nonexistent model field named `""`.

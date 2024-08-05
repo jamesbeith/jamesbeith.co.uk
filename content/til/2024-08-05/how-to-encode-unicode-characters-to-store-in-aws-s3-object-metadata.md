@@ -1,6 +1,6 @@
 ---
-title: 'How to encode Unicode characters to store in AWS S3 object metadata'
-date: '2024-08-05T09:00:00+10:00'
+title: "How to encode Unicode characters to store in AWS S3 object metadata"
+date: "2024-08-05T09:00:00+10:00"
 ---
 
 I recently ran into [this error](https://github.com/boto/botocore/blob/1.34.130/botocore/handlers.py#L629-L638) uploading images to AWS S3 using the `boto3` package.

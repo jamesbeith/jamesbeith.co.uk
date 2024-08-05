@@ -1,6 +1,6 @@
 ---
-title: 'How to Structure Django Projects'
-date: '2018-06-25T21:00:00+10:00'
+title: "How to Structure Django Projects"
+date: "2018-06-25T21:00:00+10:00"
 ---
 
 Here are some notes on how to layout a Django project. It breaks away from structuring a project around Django “apps” and instead uses a clear separation between three core layers; data, domain, and interfaces. Let’s use the following example, an e-commerce site called “Crema” where people can purchase coffee goods. Below is a layout of the fundamental directories.

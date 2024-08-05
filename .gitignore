@@ -5,5 +5,17 @@
 /.hugo_build.lock
 /public/
 
+# Node.js
+node_modules/
+
 # System (macOS)
 .DS_Store
+
+# Yarn
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
