@@ -1,4 +1,9 @@
-.DS_Store
-.hugo_build.lock
+# JetBrains (PyCharm)
 /.idea/
+
+# Hugo
+/.hugo_build.lock
 /public/
+
+# System (macOS)
+.DS_Store
