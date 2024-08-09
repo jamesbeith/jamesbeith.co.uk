@@ -3,7 +3,7 @@
 /public/
 
 # Node.js
-node_modules/
+/node_modules/
 
 # System (macOS)
 .DS_Store
