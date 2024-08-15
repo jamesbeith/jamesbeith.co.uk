@@ -2,6 +2,8 @@
 
 Technical writing about Python & Django.
 
+[www.jamesbeith.co.uk](https://www.jamesbeith.co.uk/)
+
 ---
 
 ## Site
