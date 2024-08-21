@@ -31,7 +31,6 @@ hugo server --buildDrafts --buildFuture
 To run the linting tools, first ensure Node.js is installed using a version manager such as [fnm](https://github.com/Schniz/fnm?tab=readme-ov-file#installation). Then enable the Corepack (Yarn) package manager.
 
 ```shell
-npm install -g corepack
 corepack enable
 ```
 
