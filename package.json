@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "devDependencies": {
-    "prettier": "latest"
+    "prettier": "^3.3.3"
   },
   "prettier": {
     "proseWrap": "never"
