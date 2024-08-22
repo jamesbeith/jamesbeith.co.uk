@@ -43,7 +43,7 @@ class User(models.Model):
         ]
 ```
 
-As `name` could be blank, I can improve the index by adding the following condition to only index rows where the name is not blank.
+As `name` could be blank, I can improve the index by adding the following condition to only index rows where the name isn’t blank.
 
 ```python
 from django.db import models

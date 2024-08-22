@@ -28,27 +28,39 @@ hugo server --buildDrafts --buildFuture
 
 ## Linting
 
-[Prettier](https://prettier.io/) is used.
+[Vale](https://vale.sh/) and [Prettier](https://prettier.io/) are used.
 
-To run the linting tools, first ensure Node.js is installed using a version manager such as [fnm](https://github.com/Schniz/fnm?tab=readme-ov-file#installation). Then enable the Corepack (Yarn) package manager.
+To install Vale, first install the [Homebrew](https://brew.sh/) package manager. Then you can install Vale using.
+
+```shell
+brew install vale
+```
+
+You then need to download and install Vale’s external configuration sources using.
+
+```shell
+vale sync
+```
+
+To install Prettier, first install Node.js using a version manager such as [fnm](https://github.com/Schniz/fnm?tab=readme-ov-file#installation). Then enable the Corepack (Yarn) package manager.
 
 ```shell
 corepack enable
 ```
 
-Install the dependencies using.
+Then you can install Prettier using.
 
 ```shell
 yarn install
 ```
 
-You can then run the linting tools with.
+To run the linting tools use.
 
 ```shell
 yarn lint
 ```
 
-You can also run the linting tools to automatically apply all fixes with.
+You can also run the linting tools to automatically apply all available fixes using.
 
 ```shell
 yarn fix

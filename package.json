@@ -11,6 +11,6 @@
   },
   "scripts": {
     "fix": "prettier . --write",
-    "lint": "prettier . --check"
+    "lint": "vale . && prettier . --check"
   }
 }

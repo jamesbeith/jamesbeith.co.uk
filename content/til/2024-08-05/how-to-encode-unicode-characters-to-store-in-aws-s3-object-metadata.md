@@ -5,9 +5,13 @@ date: "2024-08-05T09:00:00+10:00"
 
 I recently ran into [this error](https://github.com/boto/botocore/blob/1.34.130/botocore/handlers.py#L629-L638) uploading images to AWS S3 using the `boto3` package.
 
+<!-- vale off -->
+
 > Parameter validation failed:  
 > Non ascii characters found in S3 metadata for key "filename", value: "ACME™ Anvil.jpg".  
 > S3 metadata can only contain ASCII characters.
+
+<!-- vale on -->
 
 The character in question was ™. Here’s a simplified example of the code.
 
@@ -32,21 +36,21 @@ metadata: dict[str, str] = {
 }
 ```
 
-This results in the original filename being stored as such.
+The encoded result is now compatible with the S3 metadata requirements.
 
 ```python
 >>> filename.encode("ascii", "backslashreplace").decode()
 'ACME\\u2122 Anvil.jpg'
 ```
 
-And the following can be used to reverse the result at a later date.
+And I could use `unicode-escape` to retrieve the original filename later.
 
 ```python
 >>> "ACME\\u2122 Anvil.jpg".encode("ascii").decode("unicode-escape")
 'ACME™ Anvil.jpg'
 ```
 
-At first, I thought this didn’t work for all Unicode characters, namely [emoji zwj sequences](https://www.unicode.org/emoji/charts/emoji-zwj-sequences.html) which use `U+200D` to join the characters into a single glyph, for example.
+At first, I thought this didn’t work for all Unicode characters, namely [emoji ZWJ sequences](https://www.unicode.org/emoji/charts/emoji-zwj-sequences.html) which use `U+200D` to join the characters into a single glyph, for example.
 
 ```python
 >>> "😵‍💫".encode("ascii", "backslashreplace").decode()
@@ -56,7 +60,7 @@ At first, I thought this didn’t work for all Unicode characters, namely [emoji
 '😵\u200d💫'
 ```
 
-Thanks to [Lawrence Hudson](https://github.com/quicklizard99) he pointed out that it was the REPL showing the [repr](https://docs.python.org/3/library/functions.html#repr) of the result rather than the Unicode string. Using `print()` on the result highlighted this.
+Thanks to [Lawrence Hudson](https://github.com/quicklizard99) they pointed out that it was the REPL showing the [printable representation](https://docs.python.org/3/library/functions.html#repr) of the result rather than the Unicode string. Using `print()` on the result highlighted this.
 
 ```python
 >>> print("\\U0001f635\\u200d\\U0001f4ab".encode("ascii").decode("unicode-escape"))

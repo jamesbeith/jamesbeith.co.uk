@@ -8,6 +8,17 @@
 # System (macOS)
 .DS_Store
 
+# Vale
+# https://vale.sh/docs/topics/packages/#packages-and-vcs
+vale/styles/*
+!vale/styles/config/
+
+vale/styles/config/*
+!vale/styles/config/vocabularies/
+
+vale/styles/config/vocabularies/*
+!vale/styles/config/vocabularies/Base
+
 # Yarn
 .yarn/*
 !.yarn/patches
