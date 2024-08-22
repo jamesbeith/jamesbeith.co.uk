@@ -12,6 +12,8 @@ The site is built using [Hugo](https://gohugo.io/). The theme is [PaperMod](http
 
 ## Content
 
+Content is written in Markdown. Hugo uses [Goldmark](https://github.com/yuin/goldmark/), a [CommonMark](https://spec.commonmark.org/current/) compliant parser, to render Markdown to HTML.
+
 To create new content use.
 
 ```shell
