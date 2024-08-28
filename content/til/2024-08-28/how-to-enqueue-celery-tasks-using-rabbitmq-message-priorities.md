@@ -1,6 +1,8 @@
 ---
 title: "How to Enqueue Celery Tasks Using RabbitMQ Message Priorities"
 date: "2024-08-28T13:30:00+10:00"
+aliases:
+  - /til/2024-08-21/how-to-enqueue-celery-tasks-using-rabbitmq-message-priorities/
 ---
 
 I have some slow running, low priority Celery tasks that I don’t want holding up more important tasks. I learnt how to configure Celery tasks, and queues, to support message priorities. Note, the project in question uses Django, Celery, and RabbitMQ.
