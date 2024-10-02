@@ -1,5 +1,5 @@
 ---
-title: "How to Structure Django Projects"
+title: "How to structure Django projects"
 date: "2018-06-25T21:00:00+10:00"
 ---
 
