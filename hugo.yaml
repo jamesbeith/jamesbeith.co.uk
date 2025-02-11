@@ -8,6 +8,13 @@ params:
   homeInfoParams:
     Title: Technical writing about Python & Django
     Content: 🐙 Staff Software Engineer at [Kraken Technologies](https://kraken.tech/) 🎸 Co-founder of [Glued to Music](https://www.gluedtomusic.com/)
+  socialIcons:
+    - name: "bluesky"
+      url: "https://bsky.app/profile/jamesbeith.bsky.social"
+    - name: "github"
+      url: "https://github.com/jamesbeith"
+    - name: "rss"
+      url: "/feed.xml"
   editPost:
     URL: "https://github.com/jamesbeith/jamesbeith.co.uk/blob/main/content"
     Text: "Suggest Changes"
