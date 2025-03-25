@@ -20,6 +20,7 @@ params:
     Text: "Suggest Changes"
     appendFilePath: true
   ShowCodeCopyButtons: true
+  showFullTextInRss: true
 menu:
   main:
     - identifier: blog
