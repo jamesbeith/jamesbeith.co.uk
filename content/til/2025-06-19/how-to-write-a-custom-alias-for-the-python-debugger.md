@@ -8,9 +8,10 @@ Recently shared at [work](https://kraken.tech/) was this TIL from Samuel, [Custo
 Here’s my ever so slightly adapted version which also includes printing a reminder to me that these exist.
 
 ```text
-print("Aliases: Use `rp obj` and `rpo instance` to print objects and model instances.\n")
 alias rp import rich; rich.print(%*)
 alias rpo import rich; from django import forms; rich.print(forms.model_to_dict(%*))
+
+print("Aliases: Use `rp obj` and `rpo instance` to print objects and model instances.\n")
 ```
 
 I already had something similar in my [IPython](https://github.com/ipython/ipython) startup script using [pprint](https://docs.python.org/3/library/pprint.html) but I’ve now adapted it to use [Rich](https://github.com/Textualize/rich) too.
