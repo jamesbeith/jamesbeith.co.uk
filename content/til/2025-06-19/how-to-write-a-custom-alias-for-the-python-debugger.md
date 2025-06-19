@@ -23,10 +23,10 @@ rp = rich.print
 
 
 def rpo(*args):
-    from django.forms.models import model_to_dict
+    from django import forms
 
     for instance in args:
-        rich.print(model_to_dict(instance))
+        rich.print(forms.model_to_dict(instance))
 
 
 print("Helpers: Use `rp(*args)` and `rpo(*args)` to print objects and model instances.\n")
