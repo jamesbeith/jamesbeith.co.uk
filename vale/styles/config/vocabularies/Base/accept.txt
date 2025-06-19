@@ -3,9 +3,13 @@ Crema
 
 # Tech
 ASCII
+alias
 AWS
 backend
 CRUD
+IPython
 Postgres
+pprint
 prefetching
+TIL
 ZWJ
