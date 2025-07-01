@@ -2,14 +2,17 @@
 Crema
 
 # Tech
-ASCII
 alias
+ASCII
 AWS
 backend
 CRUD
+DNS
 IPython
 Postgres
 pprint
 prefetching
+RFC
 TIL
+TLDs
 ZWJ
