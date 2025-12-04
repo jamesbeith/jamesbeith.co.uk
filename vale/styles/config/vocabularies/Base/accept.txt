@@ -1,6 +1,10 @@
 # Companies
 Crema
 
+# People, places or things
+Paolo
+Melchiorre
+
 # Tech
 alias
 ASCII
@@ -15,4 +19,5 @@ prefetching
 RFC
 TIL
 TLDs
+UUID
 ZWJ
