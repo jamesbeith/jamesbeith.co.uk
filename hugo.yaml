@@ -9,8 +9,8 @@ params:
     Title: Technical writing about Python & Django
     Content: 🐙 Staff Software Engineer at [Kraken Technologies](https://kraken.tech/) 🎸 Co-founder of [Glued to Music](https://www.gluedtomusic.com/)
   socialIcons:
-    - name: "bluesky"
-      url: "https://bsky.app/profile/jamesbeith.bsky.social"
+    - name: "x"
+      url: "https://x.com/jamesbeith"
     - name: "github"
       url: "https://github.com/jamesbeith"
     - name: "rss"
