@@ -54,7 +54,7 @@ data/
 
 The `data/` directory contains all the model and migration files for the project. Opt for one model class per module and make sure that they’re all imported into `models/__init__.py` so Django can discover them and generate migrations. This also results in one simple and consistent import of the data layer throughout the project to access the models. For example:
 
-```python
+```py3
 >>> from crema.data import models
 >>> products = models.Product.objects.all()
 ```

@@ -17,7 +17,7 @@ I recently had a deployment fail with the following [WhiteNoise](https://whiteno
 
 It was easy enough to fix, by adding the missing `style.css.map` file, but I wanted to write a test that would help prevent this from happening again in the future. Here’s what I started with.
 
-```python
+```py3
 import tempfile
 
 import pytest
@@ -39,7 +39,7 @@ def test_collect_static_files_manifest(settings: SettingsWrapper) -> None:
 
 However, when I ran the test with the `polls/style.css.map` file missing, it didn’t fail. I checked the configuration of WhiteNoise in my Django settings file.
 
-```python
+```py3
 from django.conf import STATICFILES_STORAGE_ALIAS
 
 from environs import env

@@ -5,7 +5,7 @@ date: "2025-12-04T16:30:00+11:00"
 
 I recently read [How to use UUIDv7 in Python, Django and PostgreSQL](https://www.paulox.net/2025/11/14/how-to-use-uuidv7-in-python-django-and-postgresql/) from [Paolo Melchiorre](https://github.com/pauloxnet). I particularly liked the section demonstrating how to extend the model with a generated column that stores the timestamp extracted from the UUID.
 
-```python
+```py3
 from django.db import models
 
 

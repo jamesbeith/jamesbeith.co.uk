@@ -7,7 +7,7 @@ aliases:
 
 Let’s say I have the following Django model.
 
-```python
+```py3
 from django.db import models
 
 class User(models.Model):
@@ -16,7 +16,7 @@ class User(models.Model):
 
 And I want to filter those like so.
 
-```python
+```py3
 users = User.objects.filter(name__istartswith="John")
 ```
 
@@ -30,7 +30,7 @@ WHERE UPPER("data_user"."name"::text) LIKE UPPER('John%')
 
 I can improve the performance of that query by adding the following index to the model. To complement the use of `UPPER()` in the query I can use the `Upper()` function for the index’s expression.
 
-```python
+```py3
 from django.db import models
 from django.db.models.functions import Upper
 
@@ -45,7 +45,7 @@ class User(models.Model):
 
 As `name` could be blank, I can improve the index by adding the following condition to only index rows where the name isn’t blank.
 
-```python
+```py3
 from django.db import models
 from django.db.models.functions import Upper
 
