@@ -7,31 +7,31 @@ Here are some notes on how to structure a Django project. It breaks away from st
 
 ```plaintext
 src/
-    crema/
-        data/
-            migrations/
-            models/
-        domain/
-            baskets/
-            orders/
-            products/
-            users/
-        interfaces/
-            actions/
-                management/
-                    commands/
-            dashboard/
-                orders/
-                products/
-                users/
-            store/
-                account/
-                basket/
-                checkout/
-                products/
-    tests/
-        functional/
-        unit/
+  crema/
+    data/
+      migrations/
+      models/
+    domain/
+      baskets/
+      orders/
+      products/
+      users/
+    interfaces/
+      actions/
+        management/
+          commands/
+      dashboard/
+        orders/
+        products/
+        users/
+      store/
+        account/
+        basket/
+        checkout/
+        products/
+  tests/
+    functional/
+    unit/
 ```
 
 The `src/` directory lives in the root of the repository, alongside files such as `README.md`. The `crema/` directory contains all the project files, and all the test files live in the `tests/` directory. Let’s drill down into the three main layers.
@@ -40,16 +40,16 @@ The `src/` directory lives in the root of the repository, alongside files such a
 
 ```plaintext
 data/
-    migrations/
-        __init__.py
-        0001_initial.py
-    models/
-        __init__.py
-        basket.py
-        order.py
-        product.py
-        user.py
+  migrations/
     __init__.py
+    0001_initial.py
+  models/
+    __init__.py
+    basket.py
+    order.py
+    product.py
+    user.py
+  __init__.py
 ```
 
 The `data/` directory contains all the model and migration files for the project. Opt for one model class per module and make sure that they’re all imported into `models/__init__.py` so Django can discover them and generate migrations. This also results in one simple and consistent import of the data layer throughout the project to access the models. For example:
@@ -67,12 +67,12 @@ The `domain/` directory contains all the business logic files. Each domain area 
 
 ```plaintext
 domain/
-    orders/
-        __init__.py
-        engine.py
-        operations.py
-        processing.py
+  orders/
     __init__.py
+    engine.py
+    operations.py
+    processing.py
+  __init__.py
 ```
 
 The key point is that the functions within these modules remain focused on their specific domain and call upon other domain areas for theirs. With this focus, all changes flow through dedicated functions and it becomes easier to add additional operations to them as business needs change. This produces consistent results regardless of which interface is calling into the domain layer.
@@ -95,15 +95,15 @@ The `tests/` directory lives alongside the `src/` directory. Betters to have all
 
 ```plaintext
 src/
-    crema/
-        data/
-            models/
-                order.py
-    tests/
-        unit/
-            data/
-                models/
-                    test_order.py
+  crema/
+    data/
+      models/
+        order.py
+  tests/
+    unit/
+      data/
+        models/
+          test_order.py
 ```
 
 ## Django apps
