@@ -18,7 +18,7 @@ Firstly, I needed to decide on my _priority values_. Whilst RabbitMQ supports pr
 
 I decided on using values between 1 and 3, which conveniently map to low, medium and high priority.
 
-```py3
+```python
 class Priority(enum.IntEnum):
     LOW = 1
     MEDIUM = 2
@@ -27,7 +27,7 @@ class Priority(enum.IntEnum):
 
 I then needed to configure Celery by updating a few settings in my Django settings module. Note, I’m not using the `Priority` class here as that’s declared in another module that I didn’t want my Django settings module to depend upon.
 
-```py3
+```python
 # The default priority for all tasks.
 CELERY_TASK_DEFAULT_PRIORITY = 2
 # The default max priority for all queues.
@@ -36,7 +36,7 @@ CELERY_TASK_QUEUE_MAX_PRIORITY = 3
 
 I wanted to use the RabbitMQ priority feature on all my queues, but if I’d only wanted it on certain queues I could have configured those using `"x-max-priority"` like so.
 
-```py3
+```python
 CELERY_QUEUE_DEFAULT = "celery"
 CELERY_QUEUE_PRIORITY = "priority"
 CELERY_TASK_QUEUES = [
@@ -73,7 +73,7 @@ In production, the process was somewhat similar in that I created a new RabbitMQ
 
 Lastly, I configured my appropriate Celery tasks using the `Priority` class.
 
-```py3
+```python
 @app.task(priority=Priority.LOW)
 def generate_report():
     ...

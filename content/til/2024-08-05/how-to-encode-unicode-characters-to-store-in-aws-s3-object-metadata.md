@@ -15,7 +15,7 @@ I recently ran into [this error](https://github.com/boto/botocore/blob/1.34.130/
 
 The character in question was ™. Here’s a simplified example of the code.
 
-```py3
+```python
 filename = "ACME™ Anvil.jpg"
 metadata: dict[str, str] = {
     "filename": filename,
@@ -30,7 +30,7 @@ client.upload_fileobj(
 
 I wanted to preserve the original filename, so I learnt to use `backslashreplace` when encoding the filename to ASCII. Note, I have to subsequently use `.decode()` as both metadata keys and values must be `str`, not `bytes`.
 
-```py3
+```python
 metadata: dict[str, str] = {
     "filename": filename.encode("ascii", "backslashreplace").decode(),
 }
@@ -38,21 +38,21 @@ metadata: dict[str, str] = {
 
 The encoded result is now compatible with the S3 metadata requirements.
 
-```py3
+```python
 >>> filename.encode("ascii", "backslashreplace").decode()
 'ACME\\u2122 Anvil.jpg'
 ```
 
 And I could use `unicode-escape` to retrieve the original filename later.
 
-```py3
+```python
 >>> "ACME\\u2122 Anvil.jpg".encode("ascii").decode("unicode-escape")
 'ACME™ Anvil.jpg'
 ```
 
 At first, I thought this didn’t work for all Unicode characters, namely [emoji ZWJ sequences](https://www.unicode.org/emoji/charts/emoji-zwj-sequences.html) which use `U+200D` to join the characters into a single glyph, for example.
 
-```py3
+```python
 >>> "😵‍💫".encode("ascii", "backslashreplace").decode()
 '\\U0001f635\\u200d\\U0001f4ab'
 
@@ -62,7 +62,7 @@ At first, I thought this didn’t work for all Unicode characters, namely [emoji
 
 Thanks to [Lawrence Hudson](https://github.com/quicklizard99) they pointed out that it was the REPL showing the [printable representation](https://docs.python.org/3/library/functions.html#repr) of the result rather than the Unicode string. Using `print()` on the result highlighted this.
 
-```py3
+```python
 >>> print("\\U0001f635\\u200d\\U0001f4ab".encode("ascii").decode("unicode-escape"))
 😵‍💫
 ```

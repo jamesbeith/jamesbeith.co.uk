@@ -7,7 +7,7 @@ Django has a many built-in [database functions](https://docs.djangoproject.com/e
 
 Whilst writing a custom `Func` subclass may sometimes be necessary, I learnt that there’s many cases when you can instantiate `Func` with the necessary arguments to get what you need. For example, take the following model.
 
-```py3
+```python
 from django.contrib.postgres.fields import ArrayField
 from django.db import models
 
@@ -17,7 +17,7 @@ class Post(models.Model):
 
 Making use of the `array_shuffle` Postgres [Array Function](https://www.postgresql.org/docs/current/functions-array.html) and an annotation, each of the post’s tags are in a randomised order.
 
-```py3
+```python
 from django.db.models import F, Func
 
 posts = Post.objects.annotate(
@@ -27,7 +27,7 @@ posts = Post.objects.annotate(
 
 A second, slightly more contrived example.
 
-```py3
+```python
 from django.db import models
 
 class Post(models.Model):
@@ -38,7 +38,7 @@ class Post(models.Model):
 
 This time using the `make_date` Postgres’ [Date/Time Function](https://www.postgresql.org/docs/current/functions-datetime.html) to get a `date` object from the post’s published values.
 
-```py3
+```python
 from django.db.models import DateField, F, Func
 
 posts = Post.objects.annotate(
